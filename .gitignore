@@ -1,0 +1,40 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Dependencies / build outputs
+node_modules/
+frontend/node_modules/
+agent-server/node_modules/
+nft-picture/node_modules/
+artifacts/
+cache/
+coverage/
+frontend/.next/
+agent-server/dist/
+*.log
+.npm-cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!frontend/.env.example
+!agent-server/.env.example
+frontend/.env.local
+frontend/.env.*.local
+agent-server/.env.local
+private_key
+dev_private_key
+
+# Internal-only workspace data
+.agents/
+.codex/
+.serena/
+ops/
+progress/
+reference/
+
+# Generated media outputs
+nft-picture/output/

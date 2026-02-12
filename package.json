@@ -1,0 +1,28 @@
+{
+  "name": "flap-nfa-mint",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Flap NFA mining DApp monorepo (contracts + scripts + backend + frontend)",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+    "deploy:contracts": "hardhat run scripts/deploy-contracts.js --network bsctestnet",
+    "launch:token": "hardhat run scripts/launch-token.js --network bsctestnet",
+    "setup:post-launch": "hardhat run scripts/setup.js --network bsctestnet",
+    "find:salt": "node scripts/find-salt.js",
+    "upload:meta": "node scripts/upload-meta.js",
+    "ipfs:hashlips": "node scripts/hashlips-pinata-flow.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.24.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
+    "axios": "^1.8.2",
+    "ethers": "^6.13.5",
+    "form-data": "^4.0.2"
+  }
+}

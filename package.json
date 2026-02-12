@@ -8,6 +8,7 @@
     "test": "hardhat test",
     "clean": "hardhat clean",
     "deploy:contracts": "hardhat run scripts/deploy-contracts.js --network bsctestnet",
+    "deploy:adapter": "hardhat run scripts/deploy-adapter.js --network bsctestnet",
     "launch:token": "hardhat run scripts/launch-token.js --network bsctestnet",
     "setup:post-launch": "hardhat run scripts/setup.js --network bsctestnet",
     "find:salt": "node scripts/find-salt.js",

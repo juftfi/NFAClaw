@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZK Transcript Proof (PoC)</title>
+    <style>
+      :root {
+        --bg0: #0b0f1a;
+        --bg1: #0f1730;
+        --ink: #e9eefc;
+        --muted: rgba(233, 238, 252, 0.75);
+        --card: rgba(255, 255, 255, 0.06);
+        --stroke: rgba(255, 255, 255, 0.12);
+        --accent: #7cf3d2;
+        --accent2: #ffd36e;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: radial-gradient(1100px 600px at 20% 10%, rgba(124, 243, 210, 0.22), transparent 55%),
+          radial-gradient(900px 520px at 85% 35%, rgba(255, 211, 110, 0.18), transparent 60%),
+          linear-gradient(180deg, var(--bg0), var(--bg1));
+        color: var(--ink);
+        font-family: var(--sans);
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 44px 28px 54px;
+      }
+
+      .tag {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid var(--stroke);
+        background: rgba(255,255,255,0.03);
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+      }
+
+      h1 {
+        margin: 18px 0 10px;
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 1.06;
+        letter-spacing: -0.03em;
+      }
+
+      .sub {
+        margin: 0 0 26px;
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 78ch;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--stroke);
+        background: var(--card);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      }
+
+      .card .hd {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--stroke);
+        background: rgba(0,0,0,0.18);
+      }
+
+      .card .hd .ttl {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: rgba(233,238,252,0.9);
+      }
+
+      .card .hd .hint {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: rgba(233,238,252,0.6);
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        line-height: 1.45;
+        color: rgba(233,238,252,0.92);
+        white-space: pre-wrap;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 4px 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(124,243,210,0.35);
+        background: rgba(124,243,210,0.12);
+        color: rgba(124,243,210,0.95);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+
+      .list {
+        padding: 16px 18px 18px;
+        color: rgba(233,238,252,0.86);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .list .k {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 12.5px;
+      }
+
+      .note {
+        margin-top: 14px;
+        padding: 12px 14px;
+        border: 1px solid rgba(255, 211, 110, 0.3);
+        border-radius: 14px;
+        background: rgba(255, 211, 110, 0.08);
+        color: rgba(255, 238, 200, 0.95);
+        font-size: 13px;
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: rgba(233,238,252,0.55);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+
+      @media (max-width: 980px) {
+        .grid { grid-template-columns: 1fr; }
+        h1 { font-size: 36px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="tag">
+        <span class="pill">PoC</span>
+        <span>BNB Chain / BSC-friendly (EVM verifier)</span>
+      </div>
+
+      <h1>ZK Proof for Verifiable Agent Transcript</h1>
+      <p class="sub">
+        Commit a transcript Merkle root on-chain per <span class="k">tokenId</span>, then prove (in zero-knowledge)
+        that a message hash is included in the committed set. Minimal, shareable skeleton for BAP-578-aligned agents.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="hd">
+            <div class="ttl">circom (sketch)</div>
+            <div class="hint">public: root, msgHash</div>
+          </div>
+          <pre>// leaf = Poseidon(msgHash, salt)
+// root = MerklePoseidon(leaf, path...)
+component main { public [root, msgHash] } = TranscriptInclusion(20);</pre>
+        </div>
+
+        <div class="card">
+          <div class="hd">
+            <div class="ttl">Solidity registry (PoC)</div>
+            <div class="hint">store root + verify proof</div>
+          </div>
+          <pre>mapping(uint256 =&gt; bytes32) rootOf;
+
+function commitTranscript(uint256 tokenId, bytes32 root) external onlyOwner;
+
+function verifyInclusion(
+  uint256 tokenId,
+  bytes32 root,
+  bytes32 msgHash,
+  uint256[2] calldata a,
+  uint256[2][2] calldata b,
+  uint256[2] calldata c,
+  uint256[2] calldata input // [root, msgHash]
+) external view returns (bool);</pre>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 18px;">
+        <div class="hd">
+          <div class="ttl">What It Proves / What It Doesn't</div>
+          <div class="hint">be precise publicly</div>
+        </div>
+        <div class="list">
+          <div><span class="k">Proves:</span> a specific transcript message hash is included in the committed set (root) for an agent/NFA.</div>
+          <div><span class="k">Doesn't prove:</span> that “training happened” or that a model was trained from that corpus.</div>
+          <div class="note">
+            If you want to prove “model output comes from a specific model version”, you need to commit model version + inference trace, which is a larger design.
+          </div>
+          <div class="footer">Repo PoC files: contracts/ZKTranscriptRegistry.sol, zkp/circuits/transcript_inclusion.circom</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

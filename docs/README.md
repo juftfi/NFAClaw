@@ -9,6 +9,7 @@ Language:
 - BAP-578 compatibility matrix: `docs/bap578-compatibility-matrix.md`
 - BAP-578 collaboration guide: `docs/bap578-collaboration.md`
 - Open-source boundary: `docs/open-source-boundary.md`
+- ZK verifiable AI content (PoC): `zkp/README.zh-CN.md`
 
 ## Governance Documents (Root)
 - Contributing: `CONTRIBUTING.md`

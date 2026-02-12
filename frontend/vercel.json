@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/distribute",
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron/dev-refill",
+      "schedule": "5-59/10 * * * *"
+    }
+  ]
+}

@@ -37,7 +37,7 @@ export interface FlapclawRarity {
   topTraits: SelectedTrait[];
 }
 
-export interface NFAClawProfile {
+export interface FlapclawProfile {
   traits: Record<LayerKey, string>;
   selected: SelectedTrait[];
   rarity: FlapclawRarity;
@@ -46,7 +46,7 @@ export interface NFAClawProfile {
   catchphraseHints: string[];
 }
 
-const NFAClaw_V5_LAYERS: LayerDef[] = [
+const FLAPCLAW_V5_LAYERS: LayerDef[] = [
   {
     key: 'background',
     label: 'Background',
@@ -183,7 +183,7 @@ function pickWeightedTrait(seed: bigint, layer: LayerDef): SelectedTrait {
 function scoreBounds() {
   let min = 0;
   let max = 0;
-  for (const layer of NFAClaw_V5_LAYERS) {
+  for (const layer of FLAPCLAW_V5_LAYERS) {
     const total = layer.traits.reduce((sum, item) => sum + item.weight, 0);
     const scores = layer.traits.map((item) => Math.log2(total / item.weight));
     min += Math.min(...scores);
@@ -286,9 +286,9 @@ function buildStyleAnchors(selected: SelectedTrait[], tier: FlapclawRarity['tier
   };
 }
 
-export function deriveFlapclawV5Profile(traitSeedHex: `0x${string}`): NFAClaw {
+export function deriveFlapclawV5Profile(traitSeedHex: `0x${string}`): FlapclawProfile {
   const seed = BigInt(traitSeedHex);
-  const selected = NFAClaw_V5_LAYERS.map((layer) => pickWeightedTrait(seed, layer));
+  const selected = FLAPCLAW_V5_LAYERS.map((layer) => pickWeightedTrait(seed, layer));
 
   const rarityScoreRaw = selected.reduce((sum, item) => sum + Math.log2(item.totalWeight / item.weight), 0);
   const normalized = ((rarityScoreRaw - BOUNDS.min) / (BOUNDS.max - BOUNDS.min)) * 100;

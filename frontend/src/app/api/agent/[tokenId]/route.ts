@@ -30,7 +30,7 @@ export async function GET(
       persona: {
         role: persona.role,
         traits: persona.traitSet,
-        nfaclawProfile: persona.nfaProfile
+        flapclawProfile: persona.nfaProfile
       },
       rarity: persona.nfaProfile.rarity,
       validation: {

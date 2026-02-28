@@ -52,7 +52,7 @@ function parseChatAuthMessage(message: string): { ok: true; data: ChatAuthFields
   if (lines.length < 2) {
     return { ok: false, error: 'authMessage too short' };
   }
-  if (lines[0] !== 'FlapClaw Chat Auth') {
+  if (lines[0] !== 'NFAClaw Chat Auth') {
     return { ok: false, error: 'unsupported authMessage format' };
   }
 

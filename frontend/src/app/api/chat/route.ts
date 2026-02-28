@@ -333,7 +333,7 @@ export async function POST(request: Request) {
       {
         role: persona.role,
         trait: persona.traitSet,
-        flapclawProfile: persona.nfaProfile,
+        nfaclawProfile: persona.nfaProfile,
         chainData: toolResults
       },
       null,

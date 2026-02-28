@@ -1,6 +1,6 @@
 import personaData from './data/personas.json';
 import type { PersonaTraitSet } from './types';
-import { deriveFlapclawV5Profile } from './flapclawV5';
+import { deriveFlapclawV5Profile } from './nfaclawV5';
 
 interface RoleTemplate {
   id: number;

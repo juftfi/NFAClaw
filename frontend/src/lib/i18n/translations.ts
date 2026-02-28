@@ -13,14 +13,14 @@ export const translations: Record<Locale, NestedStrings> = {
   en: {
     header: {
       network: 'BSC MAINNET',
-      project: 'FLAPCLAW',
+      project: 'NFAClaw',
       type: 'POW MINING',
       terminal: 'Terminal',
       myAgents: 'My Agents',
       comms: 'Comms',
     },
     footer: {
-      copyright: 'FLAPCLAW PROTOCOL © 2026',
+      copyright: 'NFAClaw PROTOCOL © 2026',
       docs: 'DOCS',
       contract: 'CONTRACT',
       twitter: 'TWITTER',
@@ -119,14 +119,14 @@ export const translations: Record<Locale, NestedStrings> = {
   'zh-CN': {
     header: {
       network: 'BSC 主网',
-      project: 'FLAPCLAW',
+      project: 'NFAClaw',
       type: 'POW 挖矿',
       terminal: '终端',
       myAgents: '我的 NFA',
       comms: '对话',
     },
     footer: {
-      copyright: 'FLAPCLAW PROTOCOL © 2026',
+      copyright: 'NFAClaw PROTOCOL © 2026',
       docs: '文档',
       contract: '合约',
       twitter: '推特',
@@ -223,14 +223,14 @@ export const translations: Record<Locale, NestedStrings> = {
   'zh-TW': {
     header: {
       network: 'BSC 主網',
-      project: 'FLAPCLAW',
+      project: 'NFAClaw',
       type: 'POW 挖礦',
       terminal: '終端',
       myAgents: '我的 NFA',
       comms: '對話',
     },
     footer: {
-      copyright: 'FLAPCLAW PROTOCOL © 2026',
+      copyright: 'NFAClaw PROTOCOL © 2026',
       docs: '文檔',
       contract: '合約',
       twitter: '推特',

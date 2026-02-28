@@ -37,7 +37,7 @@ export interface FlapclawRarity {
   topTraits: SelectedTrait[];
 }
 
-export interface FlapclawProfile {
+export interface NFAClawProfile {
   traits: Record<LayerKey, string>;
   selected: SelectedTrait[];
   rarity: FlapclawRarity;
@@ -286,7 +286,7 @@ function buildStyleAnchors(selected: SelectedTrait[], tier: FlapclawRarity['tier
   };
 }
 
-export function deriveFlapclawV5Profile(traitSeedHex: `0x${string}`): FlapclawProfile {
+export function deriveFlapclawV5Profile(traitSeedHex: `0x${string}`): NFAClaw {
   const seed = BigInt(traitSeedHex);
   const selected = NFAClaw_V5_LAYERS.map((layer) => pickWeightedTrait(seed, layer));
 

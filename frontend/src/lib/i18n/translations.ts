@@ -30,7 +30,7 @@ export const translations: Record<Locale, NestedStrings> = {
       wrongNetwork: 'Wrong Network',
     },
     hero: {
-      supply: '$NFAClaw : 0x195075f504963810486037302abdcbae87867777',
+      supply: '$NFAClaw 7777',
       title: 'NFAClaw',
       description:
         'Wings to fly. Claws to hold. The first hybrid species on BSC Network.',

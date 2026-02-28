@@ -91,7 +91,7 @@ npm run ipfs:hashlips
 This repository currently provides a BAP-578-aligned engineering implementation, not a formal full-interface protocol certification.
 
 Flap ecosystem positioning:
-- FlapClaw can be presented as the first BAP-578-aligned NFA landing implementation on the Flap platform.
+- NFAClaw can be presented as the first BAP-578-aligned NFA landing implementation on the Flap platform.
 - Keep wording at "aligned landing implementation" until full interface conformance is complete.
 
 Current status:
@@ -103,7 +103,7 @@ Professional references:
 - `docs/bap578-compatibility-matrix.md`
 
 Recommended external wording:
-> FlapClaw is a BAP-578-aligned NFA implementation in production practice, with additional creative mechanics (PoW minting, dividend flywheel, and agent chat). We are incrementally aligning to a fuller protocol surface.
+> NFAClaw is a BAP-578-aligned NFA implementation in production practice, with additional creative mechanics (PoW minting, dividend flywheel, and agent chat). We are incrementally aligning to a fuller protocol surface.
 
 ## Open Collaboration (BAP-578)
 We want this repo to be easy for standard contributors and protocol experts to review.

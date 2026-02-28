@@ -62,7 +62,7 @@ npm run deploy:adapter
 
 Flap 平台定位建议：
 
-- FlapClaw 可定位为 Flap 平台首个 BAP-578 对齐 NFA 落地实现。
+- NFAClaw 可定位为 Flap 平台首个 BAP-578 对齐 NFA 落地实现。
 - 已有：NFA 身份字段、持有者门控、转移后权益同步
 - 未完全对齐：官方接口面、一致性测试套件、协议级完整声明
 
@@ -71,7 +71,7 @@ Flap 平台定位建议：
 - `docs/bap578-status.md`
 - `docs/bap578-compatibility-matrix.md`
 
-> FlapClaw 正在进行 BAP-578 的实践落地，并在此基础上加入 PoW Mint、分红飞轮与 Agent Chat 的创意机制；协议兼容性正在持续增强。
+> NFAClaw 正在进行 BAP-578 的实践落地，并在此基础上加入 PoW Mint、分红飞轮与 Agent Chat 的创意机制；协议兼容性正在持续增强。
 
 ## 开放协作
 

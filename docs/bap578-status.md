@@ -9,7 +9,7 @@ This means:
 
 ## Flap Ecosystem Positioning
 Project positioning (external wording):
-- FlapClaw is positioned as the first BAP-578-aligned NFA landing implementation on the Flap platform.
+- NFAClaw is positioned as the first BAP-578-aligned NFA landing implementation on the Flap platform.
 
 Engineering guardrail:
 - Keep this wording as "aligned landing implementation" rather than "fully compliant protocol implementation" until interface and test conformance are fully completed.
@@ -23,7 +23,7 @@ Engineering guardrail:
 ## Current Positioning Recommendation
 Use this wording in external communication:
 
-> "FlapClaw is a BAP-578-aligned NFA implementation in production practice, with additional creative mechanics (PoW minting, dividend flywheel, and agent chat). We are incrementally aligning to a fuller protocol surface."
+> "NFAClaw is a BAP-578-aligned NFA implementation in production practice, with additional creative mechanics (PoW minting, dividend flywheel, and agent chat). We are incrementally aligning to a fuller protocol surface."
 
 ## Evidence Paths
 - Core mint contract: `contracts/FlapNFAMiner.sol`

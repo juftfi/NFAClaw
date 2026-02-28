@@ -65,7 +65,7 @@ export function CollectionDetails() {
               <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">
                 {t('collection.symbol')}
               </div>
-              <div className="font-display text-3xl text-flap-glow">$FCLAW</div>
+              <div className="font-display text-3xl text-flap-glow">$NFAClAW</div>
             </div>
             <div className="bg-surface border border-white/5 p-6">
               <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">

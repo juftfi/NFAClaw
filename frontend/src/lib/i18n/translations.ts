@@ -22,8 +22,8 @@ export const translations: Record<Locale, NestedStrings> = {
     footer: {
       copyright: 'NFAClaw PROTOCOL © 2026',
       docs: 'DOCS',
-      contract: 'CONTRACT',
-      twitter: 'TWITTER',
+      contract: 'Telegram: @nfaclaw',
+      twitter: 'TWITTER: @nfaclaw',
     },
     wallet: {
       connect: 'Connect Wallet',

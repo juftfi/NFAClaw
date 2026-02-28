@@ -24,7 +24,7 @@ async function main() {
   const portal = new ethers.Contract(portalAddress, PORTAL_ABI, deployer);
 
   const tokenInfo = {
-    name: process.env.TOKEN_NAME || 'NFAClaw',
+    name: process.env.TOKEN_NAME || 'nfaclaw',
     symbol: process.env.TOKEN_SYMBOL || 'FCLAW',
     imageURI: process.env.TOKEN_IMG || '',
     desc: process.env.TOKEN_DESC || '',

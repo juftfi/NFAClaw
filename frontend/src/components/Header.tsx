@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
-            alt="NFAClaw"
+            alt="nfaclaw"
             width={28}
             height={28}
             className="rounded-sm"

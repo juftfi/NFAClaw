@@ -52,7 +52,7 @@ function parseChatAuthMessage(message: string): { ok: true; data: ChatAuthFields
   if (lines.length < 2) {
     return { ok: false, error: 'authMessage too short' };
   }
-  if (lines[0] !== 'NFAClaw Chat Auth') {
+  if (lines[0] !== 'nfaclaw Chat Auth') {
     return { ok: false, error: 'unsupported authMessage format' };
   }
 
@@ -333,7 +333,7 @@ export async function POST(request: Request) {
       {
         role: persona.role,
         trait: persona.traitSet,
-        NFAClawProfile: persona.nfaProfile,
+        nfaclawProfile: persona.nfaProfile,
         chainData: toolResults
       },
       null,

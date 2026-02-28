@@ -37,7 +37,7 @@ function buildChatAuthMessage(params: {
   nonce: `0x${string}`;
 }): string {
   return [
-    'NFAClaw Chat Auth',
+    'nfaclaw Chat Auth',
     `wallet:${params.walletAddress}`,
     `tokenId:${params.tokenId}`,
     `chainId:${params.chainId}`,

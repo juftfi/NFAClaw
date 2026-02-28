@@ -37,7 +37,7 @@ function buildChatAuthMessage(params: {
   nonce: `0x${string}`;
 }): string {
   return [
-    'FlapClaw Chat Auth',
+    'NFAClaw Chat Auth',
     `wallet:${params.walletAddress}`,
     `tokenId:${params.tokenId}`,
     `chainId:${params.chainId}`,

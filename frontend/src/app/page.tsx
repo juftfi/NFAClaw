@@ -33,7 +33,7 @@ export default function Home() {
           <div className="relative w-[280px] h-[160px] md:w-[400px] md:h-[220px] opacity-90">
             <Image
               src="/images/logo.png"
-              alt="FlapClaw"
+              alt="NFAClaw"
               fill
               className="object-contain drop-shadow-[0_0_30px_rgba(139,92,246,0.4)]"
               priority

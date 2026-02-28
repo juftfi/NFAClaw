@@ -13,7 +13,7 @@ function ChatPageContent() {
       <section className="border-l-2 border-neon-green pl-6 py-2">
         <h1 className="font-display text-4xl text-white tracking-wider mb-2">NEURAL LINK</h1>
         <p className="font-mono text-sm text-gray-400 max-w-2xl">
-          Establish a direct neural link with your FlapClaw unit. Verify identity, check dividend status, or execute chain commands.
+          Establish a direct neural link with your NFAClaw unit. Verify identity, check dividend status, or execute chain commands.
         </p>
       </section>
 

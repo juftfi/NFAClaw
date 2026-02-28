@@ -80,7 +80,7 @@ export function GalleryPreview() {
             <div className="relative aspect-square overflow-hidden border-b border-white/5">
               <Image
                 src={item.image}
-                alt={`nfaclaw #${item.id}`}
+                alt={`FlapClaw #${item.id}`}
                 fill
                 className="object-cover pixelated rendering-pixelated group-hover:scale-110 transition-transform duration-500"
                 style={{ imageRendering: 'pixelated' }}
@@ -92,7 +92,7 @@ export function GalleryPreview() {
 
             <div className="p-4 space-y-3">
               <div className="font-mono text-sm text-flap-glow">
-                nfaclaw #{item.id}
+                FlapClaw #{item.id}
               </div>
               <div className="space-y-1">
                 {Object.entries(item.traits).map(([key, value]) => (

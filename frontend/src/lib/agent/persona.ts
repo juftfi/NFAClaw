@@ -1,6 +1,6 @@
 import personaData from './data/personas.json';
 import type { PersonaTraitSet } from './types';
-import { deriveFlapClawV5Profile } from './FlapClawV5';
+import { deriveFlapclawV5Profile } from './flapclawV5';
 
 interface RoleTemplate {
   id: number;
@@ -25,7 +25,7 @@ export function buildPersona(roleId: number, traitSeedHex: `0x${string}`) {
     catchphrase: traitsPool.catchphrases[deriveTrait(seed, traitsPool.catchphrases.length, 16n)],
     emojiLevel: traitsPool.emojiLevels[deriveTrait(seed, traitsPool.emojiLevels.length, 24n)]
   };
-  const nfaProfile = deriveFlapClawV5Profile(traitSeedHex);
+  const nfaProfile = deriveFlapclawV5Profile(traitSeedHex);
 
   return {
     role,

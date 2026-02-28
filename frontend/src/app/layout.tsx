@@ -8,7 +8,7 @@ import '@/styles/globals.css';
 export const metadata: Metadata = {
   title: 'NFAClaw | PoW Mining Protocol',
   description:
-    'The first hybrid-species PFP collection on Flap Network. Browser-based PoW mining on BSC.',
+    'The first hybrid-species PFP collection on BSC Network. Browser-based PoW mining on BSC.',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-icon.png',

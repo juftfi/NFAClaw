@@ -31,7 +31,7 @@ export const translations: Record<Locale, NestedStrings> = {
     },
     hero: {
       supply: '$NFAClaw — 7,777 SUPPLY',
-      title: 'NFAClaw',
+      title: '$NFAClaw : 7777',
       description:
         'Wings to fly. Claws to hold. The first hybrid species on Flap Network.',
       price: 'Price',

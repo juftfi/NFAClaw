@@ -29,7 +29,7 @@ export interface SelectedTrait {
   rarityFactor: number;
 }
 
-export interface NFAClawRarity {
+export interface FlapClawRarity {
   score: number;
   percentile: number;
   tier: 'Common' | 'Rare' | 'Epic' | 'Legendary' | 'Mythic';
@@ -37,16 +37,16 @@ export interface NFAClawRarity {
   topTraits: SelectedTrait[];
 }
 
-export interface NFAClawProfile {
+export interface FlapClawProfile {
   traits: Record<LayerKey, string>;
   selected: SelectedTrait[];
-  rarity: NFAClawRarity;
+  rarity: FlapClawRarity;
   styleAnchors: string[];
   behaviorDirectives: string[];
   catchphraseHints: string[];
 }
 
-const NFAClaw_V5_LAYERS: LayerDef[] = [
+const FlapClaw_V5_LAYERS: LayerDef[] = [
   {
     key: 'background',
     label: 'Background',
@@ -183,7 +183,7 @@ function pickWeightedTrait(seed: bigint, layer: LayerDef): SelectedTrait {
 function scoreBounds() {
   let min = 0;
   let max = 0;
-  for (const layer of NFAClaw_V5_LAYERS) {
+  for (const layer of FlapClaw_V5_LAYERS) {
     const total = layer.traits.reduce((sum, item) => sum + item.weight, 0);
     const scores = layer.traits.map((item) => Math.log2(total / item.weight));
     min += Math.min(...scores);
@@ -194,7 +194,7 @@ function scoreBounds() {
 
 const BOUNDS = scoreBounds();
 
-function percentileToTier(percentile: number): NFAClawRarity['tier'] {
+function percentileToTier(percentile: number): FlapClawRarity['tier'] {
   if (percentile >= 97) return 'Mythic';
   if (percentile >= 90) return 'Legendary';
   if (percentile >= 75) return 'Epic';
@@ -215,7 +215,7 @@ function unique(items: string[]) {
   return Array.from(new Set(items));
 }
 
-function buildStyleAnchors(selected: SelectedTrait[], tier: NFAClawRarity['tier']) {
+function buildStyleAnchors(selected: SelectedTrait[], tier: FlapClawRarity['tier']) {
   const traits = Object.fromEntries(selected.map((item) => [item.layer, item.trait])) as Record<LayerKey, string>;
   const style: string[] = [];
   const behavior: string[] = [];
@@ -286,9 +286,9 @@ function buildStyleAnchors(selected: SelectedTrait[], tier: NFAClawRarity['tier'
   };
 }
 
-export function deriveNFAClawV5Profile(traitSeedHex: `0x${string}`): NFAClawProfile {
+export function deriveFlapClawV5Profile(traitSeedHex: `0x${string}`): FlapClawProfile {
   const seed = BigInt(traitSeedHex);
-  const selected = NFAClaw_V5_LAYERS.map((layer) => pickWeightedTrait(seed, layer));
+  const selected = FlapClaw_V5_LAYERS.map((layer) => pickWeightedTrait(seed, layer));
 
   const rarityScoreRaw = selected.reduce((sum, item) => sum + Math.log2(item.totalWeight / item.weight), 0);
   const normalized = ((rarityScoreRaw - BOUNDS.min) / (BOUNDS.max - BOUNDS.min)) * 100;

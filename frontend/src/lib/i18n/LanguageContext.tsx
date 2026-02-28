@@ -23,7 +23,7 @@ const LanguageContext = createContext<LanguageContextValue>({
   t: (k) => k,
 });
 
-const STORAGE_KEY = 'NFAClaw-locale';
+const STORAGE_KEY = 'FlapClaw-locale';
 
 function resolve(obj: unknown, path: string): string {
   const keys = path.split('.');

@@ -1,6 +1,6 @@
 import personaData from './data/personas.json';
 import type { PersonaTraitSet } from './types';
-import { deriveFlapclawV5Profile } from './flapclawV5';
+import { deriveNFAClawV5Profile } from './NFAClawV5';
 
 interface RoleTemplate {
   id: number;
@@ -25,7 +25,7 @@ export function buildPersona(roleId: number, traitSeedHex: `0x${string}`) {
     catchphrase: traitsPool.catchphrases[deriveTrait(seed, traitsPool.catchphrases.length, 16n)],
     emojiLevel: traitsPool.emojiLevels[deriveTrait(seed, traitsPool.emojiLevels.length, 24n)]
   };
-  const nfaProfile = deriveFlapclawV5Profile(traitSeedHex);
+  const nfaProfile = deriveNFAClawV5Profile(traitSeedHex);
 
   return {
     role,
@@ -47,7 +47,7 @@ export function buildPersona(roleId: number, traitSeedHex: `0x${string}`) {
       `可用口头禅补充: ${nfaProfile.catchphraseHints.join('；') || '无'}`,
       '输出要求: 必须简洁、可执行、尽量引用实时链上数据，不要承诺收益。',
       '如果用户询问 claim 或余额，优先根据工具返回的数据回答，并说明下一步。',
-      '说话时要体现“角色本体 + FlapClaw 稀有特征”的混合人格，不要只重复模板话术。'
+      '说话时要体现“角色本体 + NFAClaw 稀有特征”的混合人格，不要只重复模板话术。'
     ].join('\n')
   };
 }

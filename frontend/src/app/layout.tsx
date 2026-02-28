@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'FlapClaw | PoW Mining Protocol',
+  title: 'NFAClaw | PoW Mining Protocol',
   description:
     'The first hybrid-species PFP collection on Flap Network. Browser-based PoW mining on BSC.',
   icons: {
